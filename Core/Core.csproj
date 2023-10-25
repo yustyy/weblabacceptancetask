@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="DataAccess\" />
+    <None Remove="DataAccess\EntityFramework\" />
+    <None Remove="Entities\" />
+    <None Remove="Entities\Concrete\" />
+    <None Remove="Entities\Abstract\" />
+    <None Remove="Utilities\" />
+    <None Remove="Utilities\Results\" />
+    <None Remove="Utilities\Interceptors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+    <Folder Include="DataAccess\EntityFramework\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Entities\Concrete\" />
+    <Folder Include="Entities\Abstract\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Utilities\Results\" />
+    <Folder Include="Utilities\Interceptors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
+    <PackageReference Include="Autofac" Version="7.1.0" />
+  </ItemGroup>
+</Project>
