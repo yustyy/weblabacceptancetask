@@ -10,6 +10,7 @@ using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Module = Autofac.Module;
 using Core.Utilities.Interceptors;
+using Core.Utilities.Security.JWT;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -20,6 +21,16 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+
+            builder.RegisterType<OperationClaimDal>().As<IOperationClaimDal>().SingleInstance();
+            builder.RegisterType<OperationClaimManager>().As<IOperationClaimService>().SingleInstance();
+
+            builder.RegisterType<UserOperationClaimDal>().As<IUserOperationClaimDal>().SingleInstance();
+            builder.RegisterType<UserOperationClaimManager>().As<IUserOperationClaimService>().SingleInstance();
+
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
 
 
 

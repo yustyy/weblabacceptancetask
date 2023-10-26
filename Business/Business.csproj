@@ -14,6 +14,8 @@
     <None Remove="Constants\" />
     <None Remove="DependencyResolvers\" />
     <None Remove="DependencyResolvers\Autofac\" />
+    <None Remove="BusinessAspects\" />
+    <None Remove="BusinessAspects\Autofac\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
@@ -21,12 +23,17 @@
     <Folder Include="Constants\" />
     <Folder Include="DependencyResolvers\" />
     <Folder Include="DependencyResolvers\Autofac\" />
+    <Folder Include="BusinessAspects\" />
+    <Folder Include="BusinessAspects\Autofac\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

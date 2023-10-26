@@ -14,7 +14,11 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseNpgsql("Host =localhost; Database =weblabtaskDB; Username =postgres;");
         }
 
-       public DbSet<User> users {get; set; }
+       public DbSet<User> Users {get; set; }
+
+       public DbSet<OperationClaim> OperationClaims { get; set; }
+
+       public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
 
 
     }
