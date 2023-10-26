@@ -39,10 +39,6 @@ namespace Business.Concrete
         }
 
 
-
-
-
-
         public IResult IsAuthenticated(string userMail, List<string> requiredRoles)
         {
             if (requiredRoles != null)
@@ -104,10 +100,6 @@ namespace Business.Concrete
 
             return new SuccessDataResult<User>(user, Messages.UserRegistered);
         }
-
-
-
-
 
         public IResult UserExists(string email)
         {

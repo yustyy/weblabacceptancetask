@@ -19,7 +19,6 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-
         public IResult Add(User user)
         {
             _userDal.Add(user);
@@ -27,17 +26,21 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserAdded);
         }
 
+
         public IResult Delete(User user)
         {
-            throw new NotImplementedException();
+            _userDal.Delete(user);
+
+            return new SuccessResult(Messages.UserDeleted);
         }
 
-        [SecuredOperation("user")]
+        [SecuredOperation("user,user.getall")]
         public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.AllUsersRetrieved);
         }
 
+        [SecuredOperation("user,user.getbyid")]
         public IDataResult<User> GetById(int id)
         {
             return new SuccessDataResult<User>(_userDal.Get(u => u.Id == id), Messages.UserRetrievedById);

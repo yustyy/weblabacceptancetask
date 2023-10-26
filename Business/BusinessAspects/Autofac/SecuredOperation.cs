@@ -21,7 +21,6 @@ namespace Business.BusinessAspects.Autofac
 		}
 
 
-
         protected override void OnBefore(IInvocation invocation)
         {
 

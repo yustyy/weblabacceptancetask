@@ -41,6 +41,7 @@ namespace Business.Constants
 
         public static string AccessTokenCreated = "Access Token oluşturuldu!";
 
+        public static string UserDeleted { get; internal set; }
     }
 }
 
