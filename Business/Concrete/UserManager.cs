@@ -34,13 +34,13 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserDeleted);
         }
 
-        [SecuredOperation("user,user.getall")]
+        [SecuredOperation("user")]
         public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.AllUsersRetrieved);
         }
 
-        [SecuredOperation("user,user.getbyid")]
+        [SecuredOperation("user")]
         public IDataResult<User> GetById(int id)
         {
             return new SuccessDataResult<User>(_userDal.Get(u => u.Id == id), Messages.UserRetrievedById);
