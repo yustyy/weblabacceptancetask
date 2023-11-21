@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("login")]
-        public ActionResult Login(UserForLoginDto userforLoginDto)
+        public ActionResult Login([FromBody] UserForLoginDto userforLoginDto)
         {
             var userToLogin = _authService.Login(userforLoginDto);
             if (!userToLogin.Success)
@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("register")]
-        public ActionResult Register(UserForRegisterDto userForRegisterDto)
+        public ActionResult Register([FromBody] UserForRegisterDto userForRegisterDto)
         {
             var userExists = _authService.UserExists(userForRegisterDto.Email);
             if (!userExists.Success)

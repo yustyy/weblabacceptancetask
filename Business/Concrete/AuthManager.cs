@@ -7,6 +7,7 @@ using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.JWT;
 using Entities.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using IResult = Core.Utilities.Results.IResult;
 
 namespace Business.Concrete
@@ -62,7 +63,6 @@ namespace Business.Concrete
             var userToCheck = _userService.GetByMail(userForLoginDto.Email).Data;
             if (userToCheck == null)
             {
-
                 return new ErrorDataResult<User>(Messages.UserNotFound);
 
             }
