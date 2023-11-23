@@ -19,7 +19,7 @@ namespace Business.Concrete
             _userDal = userDal;
         }
         
-        [SecuredOperation("user")]
+        
         public IResult Add(User user)
         {
             _userDal.Add(user);
